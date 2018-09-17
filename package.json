@@ -104,7 +104,8 @@
     "reselect": "3.0.1",
     "semver-compare": "^1.0.0",
     "styled-components": "^3.3.0",
-    "ua-parser-js": "^0.7.18"
+    "ua-parser-js": "^0.7.18",
+    "url-pattern": "^1.0.3"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
