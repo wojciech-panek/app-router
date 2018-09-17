@@ -1,46 +1,16 @@
 {
   "presets": [
-    [
-      "latest",
-      {
-        "es2015": {
-          "modules": false
-        }
-      }
-    ],
-    "react",
-    "stage-0"
+    "es2015",
+    "react"
   ],
   "plugins": [
-    "react-hot-loader/babel"
+    "transform-object-rest-spread",
+    "transform-class-properties"
   ],
   "env": {
-    "development": {
-      "plugins": [
-        [
-          "babel-plugin-styled-components",
-          {
-            "minify": false
-          }
-        ]
-      ]
-    },
     "production": {
-      "only": [
-        "app"
-      ],
       "plugins": [
-        "transform-react-remove-prop-types",
-        "transform-react-constant-elements",
-        "transform-react-inline-elements",
-        "babel-plugin-styled-components"
-      ]
-    },
-    "test": {
-      "plugins": [
-        "transform-es2015-modules-commonjs",
-        "transform-es2015-modules-commonjs",
-        "dynamic-import-node"
+        ["transform-react-remove-prop-types", {"removeImport": true}]
       ]
     }
   }

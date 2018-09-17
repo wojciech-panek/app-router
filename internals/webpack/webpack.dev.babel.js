@@ -35,7 +35,7 @@ module.exports = require('./webpack.base.babel')({
       // Necessary for hot reloading with IE
       'eventsource-polyfill',
       'webpack-hot-middleware/client',
-      path.join(process.cwd(), 'app/main.js'),
+      path.join(process.cwd(), 'example/main.js'),
     ],
   },
 
@@ -132,7 +132,7 @@ function dependencyHandlers() {
  */
 function templateContent() {
   const html = fs.readFileSync(
-    path.resolve(process.cwd(), 'app/index.html')
+    path.resolve(process.cwd(), 'example/index.html')
   ).toString();
 
   if (!dllPlugin) { return html; }

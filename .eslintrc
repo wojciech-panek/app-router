@@ -1,5 +1,5 @@
 {
-  "extends": "apptension-react",
+  "extends": "apptension",
   "env": {
     "browser": true,
     "node": true,
@@ -7,9 +7,155 @@
     "es6": true
   },
   "plugins": [
-    "chai-friendly"
+    "chai-friendly",
+    "react",
+    "import",
+    "babel"
   ],
   "rules": {
+    "jsx-quotes": [2, "prefer-double"],
+    "react/display-name": 2,
+    "react/forbid-component-props": 0,
+    "react/forbid-elements": 0,
+    "react/forbid-prop-types": 0,
+    "react/forbid-foreign-prop-types": 0,
+    "react/no-array-index-key": 0,
+    "react/no-children-prop": 0,
+    "react/no-danger": 1,
+    "react/no-danger-with-children": 0,
+    "react/no-deprecated": 2,
+    "react/no-did-mount-set-state": 0,
+    "react/no-did-update-set-state": 0,
+    "react/no-direct-mutation-state": 2,
+    "react/no-find-dom-node": 2,
+    "react/no-is-mounted": 2,
+    "react/no-multi-comp": 0,
+    "react/no-render-return-value": 2,
+    "react/no-set-state": 0,
+    "react/no-string-refs": 1,
+    "react/no-unescaped-entities": 0,
+    "react/no-unknown-property": 2,
+    "react/no-unused-prop-types": 0,
+    "react/prefer-es6-class": 0,
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/require-default-props": 0,
+    "react/require-optimization": 0,
+    "react/require-render-return": 2,
+    "react/self-closing-comp": 0,
+    "react/sort-comp": [2, {
+      "order": [
+        "static-methods",
+        "lifecycle",
+        "/^on.+$/",
+        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+        "everything-else",
+        "/^render.+$/",
+        "render"
+      ]
+    }],
+    "react/sort-prop-types": 0,
+    "react/style-prop-object": 0,
+    "react/void-dom-elements-no-children": 0,
+
+    "react/jsx-boolean-value": 0,
+    "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-curly-spacing": [2, "never"],
+    "react/jsx-equals-spacing": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-handler-names": 0,
+    "react/jsx-indent": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-key": 0,
+    "react/jsx-max-props-per-line": 0,
+    "react/jsx-no-bind": 0,
+    "react/jsx-no-comment-textnodes": 0,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-literals": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/jsx-no-undef": 2,
+    "react/jsx-pascal-case": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-space-before-closing": 2,
+    "react/jsx-tag-spacing": 0,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-wrap-multilines": [2, {
+      "declaration": true,
+      "assignment": true,
+      "return": true
+    }],
+
+    "import/no-unresolved": [2, { "commonjs": true, "caseSensitive": true }],
+    "import/named": 0,
+    "import/default": 0,
+    "import/namespace": 0,
+    "import/export": 2,
+    "import/no-named-as-default": 2,
+    "import/no-named-as-default-member": 2,
+    "import/no-deprecated": 0,
+    "import/no-extraneous-dependencies": [2, {
+      "devDependencies": [
+        "internals/**",
+        "example/**",
+        "server/**",
+        "**/*.spec.js",
+        "test/**",
+        "tests/**",
+        "spec/**",
+        "**/__tests__/**",
+        "test.js",
+        "test-*.js",
+        "**/*.test.js",
+        "**/*.spec.js",
+        "**/webpack.config.js",
+        "**/webpack.config.*.js",
+        "**/rollup.config.js",
+        "**/gulpfile.js",
+        "**/gulpfile.*.js",
+        "**/Gruntfile"
+      ],
+      "optionalDependencies": false
+    }],
+
+    "import/no-mutable-exports": 2,
+    "import/no-commonjs": 0,
+    "import/no-amd": 2,
+    "import/no-nodejs-modules": 0,
+    "import/first": [2, "absolute-first"],
+    "import/imports-first": 0,
+    "import/no-duplicates": 2,
+    "import/no-namespace": 0,
+    "import/extensions": [2, "always", {
+      "js": "never",
+      "jsx": "never"
+    }],
+    "import/order": [0, {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "newlines-between": "never"
+    }],
+    "import/newline-after-import": 0,
+    "import/prefer-default-export": 0,
+    "import/no-restricted-paths": 0,
+    "import/max-dependencies": 0,
+    "import/no-absolute-path": 2,
+    "import/no-dynamic-require": 2,
+    "import/no-internal-modules": [0, {
+      "allow": []
+    }],
+    "import/unambiguous": 0,
+    "import/no-webpack-loader-syntax": 2,
+    "import/no-unassigned-import": 0,
+    "import/no-named-default": 2,
+
+    "no-invalid-this": 0,
+    "semi": 0,
+
+    "babel/object-curly-spacing": [2, "always"],
+    "babel/no-invalid-this": 2,
+    "babel/semi": 2,
     "new-cap": [
       2,
       {
@@ -25,38 +171,21 @@
     "babel/new-cap": [
       2,
       {
+        "capIsNew": false,
         "capIsNewExceptions": [
           "List",
           "Map"
         ]
       }
     ],
-    "redux-saga/yield-effects": 0,
-    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
-    "redux-saga/no-unhandled-errors": 0,
-    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
     "no-unused-expressions": 0,
     // https://github.com/eslint/eslint/issues/2102
-    "chai-friendly/no-unused-expressions": 1,
+    "chai-friendly/no-unused-expressions": 1
     // https://github.com/eslint/eslint/issues/2102
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "internals/**",
-          "**/*.spec.js"
-        ]
-      }
-    ]
   },
   "settings": {
-    "import/core-modules": [
-      "local-env-config",
-      "env-config",
-      "report-error",
-      "json-server",
-      "nock",
-      "inquirer-directory"
-    ]
+    "react": {
+      "version": "16.0"
+    }
   }
 }
