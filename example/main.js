@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 
-// Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
-import { Router, Route, Link, WithRouter } from './components';
+import { Router, Route, Link, WithRouter } from '../src';
 
 class ExampleApp extends PureComponent {
   renderRouteInfo() {

@@ -8,7 +8,6 @@ import nock from 'nock';
 import chaiEnzyme from 'chai-enzyme';
 import sinonChai from 'sinon-chai';
 import chaiJestDiff from 'chai-jest-diff';
-import { css as mockCss } from 'styled-components';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -22,14 +21,6 @@ nock.disableNetConnect();
 /**
  * This object overrides environment configuration
  */
-jest.mock('local-env-config', () => ({
-  localEnvConfigLoaded: true,
-}));
-
-jest.mock('../../app/theme/sprites', () => ({
-  mobile: mockCss``,
-  desktop: mockCss``,
-}));
 
 afterEach(() => {
   nock.cleanAll();
