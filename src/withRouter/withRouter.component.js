@@ -14,7 +14,7 @@ export class WithRouter extends PureComponent {
       <RouterConsumer>
         {({ location, push, replace }) => (
           <RouteConsumer>
-            {({ params }) => this.props.children({ location, push, replace, params })}
+            {({ params }) => this.props.children({ location, params, push, replace })}
           </RouteConsumer>
         )}
       </RouterConsumer>
