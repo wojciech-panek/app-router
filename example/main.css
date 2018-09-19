@@ -21,6 +21,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  height: 100%;
 }
 
 .route__container--dark {
@@ -67,6 +68,7 @@ html, body {
 .route__button--light {
   border-color: #ffffff;
   color: #ffffff;
+  background: transparent;
 }
 
 .route__button--light:hover {
