@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext');
+
+html, body {
+  font-family: Lato;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.route__container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.route__container--dark {
+  background-color: #2a2d2f;
+}
+
+.route__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.route__logo {
+  width: 150px;
+  height: 150px;
+}
+
+.route__title {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.route__title--light {
+  color: #ffffff;
+}
+
+.route__title--dark {
+  color: #2a2d2f;
+}
+
+.route__button {
+  border: 2px solid;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 0 22px;
+  cursor: pointer;
+}
+
+.route__button--light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.route__button--light:hover {
+  background-color: #ffffff;
+  color: #2a2d2f;
+}
+
+.route__button--dark {
+  border-color: #2a2d2f;
+  color: #2a2d2f;
+}
+
+.route__button--dark:hover {
+  background-color: #2a2d2f;
+  color: #ffffff;
+}
+
+.route__code {
+  min-width: 50%;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  color: #032f62;
+  padding: 16px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+}
