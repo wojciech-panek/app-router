@@ -33,6 +33,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 300px;
 }
 
 .route__logo {
@@ -64,6 +65,7 @@ html, body {
   text-decoration: none;
   padding: 0 22px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .route__button--light {

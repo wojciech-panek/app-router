@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
@@ -29,7 +29,7 @@ function copyStyles(sourceDoc, targetDoc) {
 export class PortalRoute extends PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    onCreate: PropTypes.func,
+    onCreate: PropTypes.func.isRequired,
     onClose: PropTypes.func,
     top: PropTypes.number,
     left: PropTypes.number,
