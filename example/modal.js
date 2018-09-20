@@ -24,7 +24,7 @@ export class Modal extends React.PureComponent {
         {this.state.showWindowPortal && (
           <PortalRoute onCreate={this.handlePortalCreate} width={800} top={150}>
             <div className="route__container route__container--dark">
-              <Link className="route__button route__button--light" to="/product/2">Change route</Link>
+              <Link className="route__button route__button--light" to="/">Change route</Link>
               <button className="route__button route__button--light" onClick={() => this.closeWindowPortal()} >
                 Close me!
               </button>
