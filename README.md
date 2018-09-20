@@ -85,6 +85,31 @@ Component which exposes router variables using render prop
 ##### `router.push`: browserHistory.push function
 ##### `router.replace`: browserHistory.replace function
 
+### `<PortalRoute />`
+
+Component which allows rendering it's children in a new window
+
+#### `onCreate`: PropTypes.func.isRequired
+
+Called after opening modal. Since React doesn't know about inserting new
+elements into DOM it's basic implementation has to look as follows:
+
+```js
+  <PortalRoute onCreate={() => this.this.forceUpdate()}>
+```
+
+#### `onClose`: PropTypes.func
+
+Called after closing modal. 
+
+#### `width`: PropTypes.number
+
+#### `height`: PropTypes.number
+
+#### `top`: PropTypes.number
+
+#### `left`: PropTypes.number
+
 ## License
 
 MIT

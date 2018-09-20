@@ -70,6 +70,7 @@
     "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
@@ -136,7 +137,6 @@
     "nock": "^9.2.6",
     "null-loader": "0.1.1",
     "offline-plugin": "4.9.0",
-    "react-dom": "^16.5.1",
     "react-test-renderer": "^16.4.0",
     "redux-saga-tester": "^1.0.197",
     "rimraf": "2.6.2",
