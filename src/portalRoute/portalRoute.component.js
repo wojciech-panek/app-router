@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 function copyStyles(sourceDoc, targetDoc) {
   Array.from(sourceDoc.styleSheets).forEach(styleSheet => {
-    if(styleSheet.cssRules) {
+    if (styleSheet.cssRules) {
       const newStyleEl = sourceDoc.createElement('style');
 
       Array.from(styleSheet.cssRules).forEach(cssRule => {
@@ -16,7 +16,7 @@ function copyStyles(sourceDoc, targetDoc) {
       return;
     }
 
-    if(styleSheet.href) {
+    if (styleSheet.href) {
       const newLinkEl = sourceDoc.createElement('link');
 
       newLinkEl.rel = 'stylesheet';
@@ -53,8 +53,5 @@ export class PortalRoute extends PureComponent {
   container = document.createElement('div');
   externalWindow = null;
 
-  render = () => {
-    console.log('render');
-    return ReactDOM.createPortal(this.props.children, this.container);
-  }
+  render = () => ReactDOM.createPortal(this.props.children, this.container);
 }
