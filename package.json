@@ -1,6 +1,6 @@
 {
   "name": "study-group-app-router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Apptension's Study Group react router",
   "main": "dist/index.js",
   "repository": {
