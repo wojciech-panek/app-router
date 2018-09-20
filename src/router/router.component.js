@@ -6,7 +6,7 @@ import { RouterProvider } from './router.context';
 
 export class Router extends PureComponent {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     strictMode: PropTypes.bool.isRequired,
     errorRoute: PropTypes.node,
     errorHandler: PropTypes.func,

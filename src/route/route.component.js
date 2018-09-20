@@ -8,7 +8,7 @@ import { RouteProvider } from './route.context';
 
 export class Route extends PureComponent {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.oneOf([PropTypes.node, PropTypes.func]).isRequired,
     path: PropTypes.string.isRequired,
   };
 
@@ -20,18 +20,32 @@ export class Route extends PureComponent {
 
   renderChildren(location) {
     const params = this.pathPattern.match(location.pathname);
+    const { children } = this.props;
 
-    return (
-      <RouteProvider value={{ params }}>
-        {this.props.children}
-      </RouteProvider>
-    );
+    if (typeof children === 'function') {
+      return (
+        <RouteProvider value={{ params }}>
+          {children(this.shouldRenderChildren(location))}
+        </RouteProvider>
+      );
+    }
+
+    if (this.shouldRenderChildren(location)) {
+      return (
+        <RouteProvider value={{ params }}>
+          {children}
+        </RouteProvider>
+      );
+    }
+
+    return null;
   }
+
 
   render() {
     return (
       <RouterConsumer>
-        {({ location }) => this.shouldRenderChildren(location) ? this.renderChildren(location) : null}
+        {({ location }) => this.renderChildren(location)}
       </RouterConsumer>
     );
   }
