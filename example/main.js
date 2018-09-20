@@ -57,11 +57,11 @@ class ExampleApp extends PureComponent {
           </div>
         </Route>
         <TransitionRoute path="/transition">
-          <div className="route__container route__container--light">
+          <div className="route__container route__container--dark">
             <img src={logo} className="route__logo" />
             <div className="route__content">
-              <div className="route__title route__title--dark">Transition route</div>
-              <Link className="route__button route__button--dark" to="/product/1">Go to route 1</Link>
+              <div className="route__title route__title--light">Transition route</div>
+              <Link className="route__button route__button--light" to="/product/1">Go to route 1</Link>
             </div>
             <pre className="route__code">{this.renderRouteInfo()}</pre>
           </div>
