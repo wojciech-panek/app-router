@@ -31,16 +31,24 @@ export class PortalRoute extends PureComponent {
     children: PropTypes.node.isRequired,
     onCreate: PropTypes.func,
     onClose: PropTypes.func,
+    top: PropTypes.number,
+    left: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number,
   };
 
   static defaultProps = {
     onCreate: Function.prototype,
     onClose: Function.prototype,
+    top: 200,
+    left: 200,
+    width: 600,
+    height: 400,
   };
 
   componentDidMount() {
     this.props.onCreate();
-    this.externalWindow = window.open('', '', 'width=600,height=400,left=200,top=200');
+    this.externalWindow = window.open('', '', this.getWindowSizeAndPosition());
     this.externalWindow.document.body.appendChild(this.container);
     copyStyles(document, this.externalWindow.document);
   }
@@ -49,6 +57,11 @@ export class PortalRoute extends PureComponent {
     this.props.onClose();
     this.externalWindow.close();
   }
+
+  getWindowSizeAndPosition = () => {
+    const { width, height, left, top } = this.props;
+    return `width=${width},height=${height},left=${left},top=${top}`;
+  };
 
   container = document.createElement('div');
   externalWindow = null;

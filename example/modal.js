@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, PortalRoute } from '../src';
 
 export class Modal extends React.PureComponent {
@@ -16,13 +16,13 @@ export class Modal extends React.PureComponent {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <button className="route__button route__button--light" onClick={this.toggleWindowPortal}>
           {this.state.showWindowPortal ? 'Close the' : 'Open a'} Portal
         </button>
 
         {this.state.showWindowPortal && (
-          <PortalRoute onCreate={this.handlePortalCreate}>
+          <PortalRoute onCreate={this.handlePortalCreate} width={800} top={150}>
             <div className="route__container route__container--dark">
               <Link className="route__button route__button--light" to="/product/2">Change route</Link>
               <button className="route__button route__button--light" onClick={() => this.closeWindowPortal()} >
@@ -31,7 +31,7 @@ export class Modal extends React.PureComponent {
             </div>
           </PortalRoute>
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
