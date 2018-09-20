@@ -11,18 +11,18 @@ export class Modal extends React.PureComponent {
     window.addEventListener('beforeunload', () => {
       this.closeWindowPortal();
     });
-
-    window.setInterval(() => {
-      this.setState(state => ({
-        counter: state.counter + 1,
-      }));
-    }, 1000);
   }
 
-  toggleWindowPortal = () => this.setState(state => ({
-    ...state,
-    showWindowPortal: !state.showWindowPortal,
-  }));
+  toggleWindowPortal = () => {
+    this.setState(state => ({
+      ...state,
+      showWindowPortal: !state.showWindowPortal,
+    }));
+
+    window.setTimeout(() => {
+      this.forceUpdate();
+    }, 100);
+  };
 
   closeWindowPortal = () => this.setState({ showWindowPortal: false });
 
