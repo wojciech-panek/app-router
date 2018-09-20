@@ -33,7 +33,6 @@ module.exports = (options) => {
         // they will be a part of our compilation either way.
         // So, no need for ExtractTextPlugin here.
         test: /\.css$/,
-        include: /node_modules/,
         loaders: [{
           loader: 'style-loader',
           options: {
