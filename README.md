@@ -68,7 +68,7 @@ Called after opening modal. Since React doesn't know about inserting new
 elements into DOM it's basic implementation has to look as follows:
 
 ```js
-  <PortalRoute onCreate={() => this.this.forceUpdate()}>
+  <PortalRoute onCreate={() => this.forceUpdate()}>
 ```
 
 #### `onClose`: PropTypes.func
